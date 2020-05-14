@@ -1,0 +1,29 @@
+{
+  "name": "node-js",
+  "version": "1.0.0",
+  "description": "Net ninja tutorial",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignasandr/node.js.git"
+  },
+  "keywords": [
+    "fun",
+    "ninjas",
+    "control"
+  ],
+  "author": "o_poeic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ignasandr/node.js/issues"
+  },
+  "homepage": "https://github.com/ignasandr/node.js#readme"
+}

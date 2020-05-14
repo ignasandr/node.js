@@ -1,21 +1,19 @@
-var http = require('http');
-var fs = require('fs');
+var express = require('express');
+var app = express();
 
-// var myReadStream = fs.createReadStream(__dirname + '/readMe.txt');
-var myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8');
-var myWriteStream = fs.createWriteStream(__dirname + '/writeMe.txt');
+app.set('view engine', 'ejs');
 
-myReadStream.on('data', function(chunk){
-  console.log('new chunk received');
-  myWriteStream.write(chunk);
+app.get('/', function(req, res){
+  res.render('index.ejs');
 });
 
+app.get('/contact', function(req, res){
+  res.render('contact.ejs');
+});
 
-// var server = http.createServer(function(req, res){
-//   console.log('request was made: ' + req.url);
-//   res.writeHead(200, {'Content-Type': 'text/plain'});
-//   res.end('Hey sexy ,)');
-// });
-//
-// server.listen(3000, '127.0.0.1');
-// console.log('yo yo yo, listening on 3000');
+app.get('/profile/:name', function(req, res){
+  var data = {age: 29, job: 'ninja', hobbies: ['eating', 'fighting', 'phishing']};
+  res.render('profile', {person: req.params.name, data: data});
+});
+
+app.listen(3000);
